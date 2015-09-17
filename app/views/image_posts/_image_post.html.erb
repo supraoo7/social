@@ -1,0 +1,25 @@
+<% cache image_post do %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <% if params[:action] == 'index' %>
+        <%= link_to image_post.title, post_path(image_post.id), class: 'link' %>
+      <% else %>
+        <%= image_post.title %>
+      <% end %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <p><em><%= link_to "By #{image_post.user.name}", user_path(image_post.user.id), class: "link" %></em></p>
+    <p><%= "Created #{time_ago_in_words image_post.created_at}" %></p>
+    <%= image_tag image_post.url, class: 'img-responsive' %>
+    <%= image_post.body %>
+    <p><%= pluralize image_post.cached_comment_count, "Comment" %></p>
+    <% #debugger %>
+<% end %>
+
+    <% if image_post.user == current_user %>
+      <p><%= link_to "Edit", edit_image_post_path(image_post), class: "btn btn-default" %></p>
+    <% end %>
+  </div>
+</div>
