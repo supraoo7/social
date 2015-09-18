@@ -2,13 +2,13 @@
 lock '3.4.0'
 
 set :application, 'social'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'https://github.com/supraoo7/social.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '/var/www/social'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -35,7 +35,14 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :keep_releases, 5
 
 namespace :deploy do
-
+  # desc 'Restart application'
+  # task :restart do
+  #   on roles(:app), in: :sequence, wait: 5 do
+  #     # your restart mechanism here, for example:
+  #     execute :touch, release_path.join('tmp/restart.txt')
+  #   end
+  # end
+  
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
