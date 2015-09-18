@@ -42,7 +42,7 @@ server 'ec2-52-89-20-99.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles:
 # Global options
 # --------------
 set :ssh_options, {
- keys: '/Users/klau/Downloads/ec2-kenn-key-pair-uswest.pem',
+ keys: '~/.ssh/ec2-kenn-key-pair-uswest.pem',
  # forward_agent: false,
  # auth_methods: %w(password)
 }
