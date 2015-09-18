@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 
-gem 'pg', group: :production
+gem 'mysql2', group: :production
 
 gem 'bootstrap-sass'
 gem 'will_paginate'
