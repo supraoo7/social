@@ -7,7 +7,7 @@
 #server 'ec2-52-89-20-99.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}, my_property: :my_value
 
 # aws amazon linux
-server 'ec2-52-24-153-69.us-west-2.compute.amazonaws.com', user: 'ec2-user', roles: %w{app db web}, my_property: :my_value
+server '162.243.156.97', user: 'demo', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
@@ -46,7 +46,7 @@ server 'ec2-52-24-153-69.us-west-2.compute.amazonaws.com', user: 'ec2-user', rol
 # Global options
 # --------------
 set :ssh_options, {
- keys: '~/.ssh/ec2-kenn-key-pair-uswest.pem',
+ keys: '~/.ssh/do-test-server',
  # forward_agent: false,
  # auth_methods: %w(password)
 }
